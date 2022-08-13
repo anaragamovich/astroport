@@ -7,6 +7,7 @@
 	<title>Astroport</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -22,13 +23,14 @@
 		<div class="container">
 			<h1 class="main">Заголовок</h1>
 			<div class="setting">
-				<button type="projeckts" class="btn btn-form popup-btn">
-					<img src="img/projeckts.png" alt="projeckts" class="projeckts">
+				<button class="btn btn-form" id="btn_project">
+					<img src="img/projects.png">
 				</button>
-				<button type="networks" class="btn btn-form">
-					<img src="img/networks.png" alt="networks" class="networks"></button>
-				<button type="language" class="btn btn-form">
-					<img src="img/language.png" alt="language" class="language">
+				<button class="btn btn-form" id="btn_network">
+					<img src="img/networks.png">
+				</button>
+				<button class="btn btn-form" id="btn_language">
+					<img src="img/language.png">
 				</button>
 			</div>
 			<div class="wrapper-form">
@@ -67,43 +69,77 @@
 		</div>
 	</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-	<script src="src/jQuery.js">
+	<script>
 		$(document).ready(function(){
-			$('.popup-btn').on('click', function(event) {
+			$('#btn_project').on('click', function(event) {
 				event.preventDefault();
-				$('.popup').show('slow/400/fast', function() {
-					
+				$('#project_popup_id').show('slow/400/fast', function() {
+
 				});
-				$('.popup-close').on('click', function(event) {
+				$('#project_popup_close_id').on('click', function(event) {
 					event.preventDefault();
 					$('.popup').hide('slow/400/fast', function() {
-						
+
 					});
 				});
 			});
-		}
+		});
+
+		$(document).ready(function(){
+			$('#btn_network').on('click', function(event) {
+				event.preventDefault();
+				$('#network_popup_id').show('slow/400/fast', function() {
+
+				});
+				$('#network_popup_close_id').on('click', function(event) {
+					event.preventDefault();
+					$('.popup').hide('slow/400/fast', function() {
+
+					});
+				});
+			});
+		});
+
+		$(document).ready(function(){
+			$('#btn_language').on('click', function(event) {
+				event.preventDefault();
+				$('#language_popup_id').show('slow/400/fast', function() {
+
+				});
+				$('#language_popup_close_id').on('click', function(event) {
+					event.preventDefault();
+					$('.popup').hide('slow/400/fast', function() {
+
+					});
+				});
+			});
+		});
 	</script>
 
-
-
-	<span class="popup">
+	<span class="popup" id="project_popup_id">
 		<span class="popup-content">
-			<button class="popup-close">&times</button>
-				<button class="btn-popup">My poject</button>
-				<button class="btn-popup">Your poject</button>
+			<button class="popup-close" id="project_popup_close_id">&times</button>
+				<button class="btn-popup">Project one</button>
+				<button class="btn-popup">Project two</button>
 				<button class="btn-popup">Thirty part project</button>
+		</span>
+	</span>
+
+	<span class="popup" id="network_popup_id">
+		<span class="popup-content">
+			<button class="popup-close" id="network_popup_close_id">&times</button>
+				<button class="btn-popup">Test one</button>
+				<button class="btn-popup">Test two</button>
+				<button class="btn-popup">Test free</button>
+		</span>
+	</span>
+
+	<span class="popup" id="language_popup_id">
+		<span class="popup-content">
+			<button class="popup-close" id="language_popup_close_id">&times</button>
+				<button class="btn-popup">EN</button>
+				<button class="btn-popup">UA</button>
+				<button class="btn-popup">Ru</button>
 		</span>
 	</span>
 </body>
