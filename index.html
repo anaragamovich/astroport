@@ -14,7 +14,7 @@
 			<div class="wrapper">
 				<img src="img/astro.png" alt="logo" class="logo">
 				<h2 class="title">Версії контракту</h2>
-				<a href="#"><img src="img/github.png" alt="github" class="github"></a>
+				<a href="https://github.com/"><img src="img/github.png" alt="github" class="github"></a>
 			</div>
 		</div>
 	</div>
@@ -23,9 +23,7 @@
 			<h1 class="main">Заголовок</h1>
 			<div class="setting">
 				<button type="projeckts" class="btn btn-form popup-btn">
-					
 					<img src="img/projeckts.png" alt="projeckts" class="projeckts">
-
 				</button>
 				<button type="networks" class="btn btn-form">
 					<img src="img/networks.png" alt="networks" class="networks"></button>
@@ -33,23 +31,73 @@
 					<img src="img/language.png" alt="language" class="language">
 				</button>
 			</div>
-			<div class="wrapper">
-				
+			<div class="wrapper-form">
+				<div class="form form-L">
+					<div class="text">
+						<p class="name">Name</p>
+							<ul class="list-L">
+								<li class="catalogue">Contract adress<hr></li>
+								<li class="catalogue">Local name<hr></li>
+								<li class="catalogue">Local version<hr></li>
+								<li class="catalogue">Deployed name<hr></li>
+								<li class="catalogue">Deployed version<hr></li>
+							</ul>
+					</div>
+				</div>
+				<div class="form form-R">
+					<div class="text">
+						<p class="variety">Variety</p>
+							<ul class="list-R">
+								<li class="catalogue">terratfgybhujkh4567789hgvc7g898j00ddsd<hr></li>
+								<li class="catalogue">staking_adress<hr></li>
+								<li class="catalogue">1.0.1<hr></li>
+								<li class="catalogue">astroport-staking<hr></li>
+								<li class="catalogue">1.0.0<hr></li>
+							</ul>
+					</div>
+			</div>
 			</div>
 		</div>
 	</div>
-	<script>
+	<div class="footer">
+		<div class="container">
+			<div class="rights">
+				Astroport trulyalya 2022
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="src/jQuery.js">
 		$(document).ready(function(){
-			$('.popup-btn').on('click', function(event){
+			$('.popup-btn').on('click', function(event) {
 				event.preventDefault();
-				$('.popup').fadrIn()
-			$('.popup-close').on('click', function(event) {
-				event.preventDefault();
-			$('.popup').fadeOut()
+				$('.popup').show('slow/400/fast', function() {
+					
+				});
+				$('.popup-close').on('click', function(event) {
+					event.preventDefault();
+					$('.popup').hide('slow/400/fast', function() {
+						
+					});
+				});
 			});
-			}
 		}
 	</script>
+
+
+
 	<span class="popup">
 		<span class="popup-content">
 			<button class="popup-close">&times</button>
