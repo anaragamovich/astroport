@@ -70,7 +70,7 @@
 }
 .setting {
 	display: inline-block;
-	align-items: left;
+	align-items: flex-start;
 	width: 350px
 }
 .wrapper-form {
