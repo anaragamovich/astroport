@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.static('.'));
 
-app.get('/values', (req, res) => {
+app.get('/contracts_data', (req, res) => {
     let values = [
         {
             "address": "terra19t8ffmz6q2rdm3rllyksd6sex6n650a4anttzzvz9mf8mqr4nkrq44cyu6",
