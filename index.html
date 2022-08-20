@@ -7,6 +7,7 @@
 	<title>Astroport</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/popups.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
@@ -24,13 +25,19 @@
 			<h1 class="main">Заголовок</h1>
 			<div class="setting">
 				<button class="btn btn-form" id="btn_project">
-					<img src="img/projects.png" alt="btn_project">
+					<a href="#" onclick="myFunction('btn_project', 'project_popup_id', 'popup-new-1', 'popup-close-1')">
+						<img src="img/projects.png" alt="btn_project">
+					</a>
 				</button>
 				<button class="btn btn-form" id="btn_network">
-					<img src="img/networks.png" alt="btn_network">
+					<a href="#" onclick="myFunction('btn_network', 'network_popup_id', 'popup-new-2', 'popup-close-2')">
+						<img src="img/networks.png" alt="btn_network">
+					</a>
 				</button>
-				<button class="btn btn-form" id="btn_language">
-					<img src="img/language.png" alt="btn_language">
+				<button class="btn" id="btn_language">
+					<a href="#" onclick="myFunction('btn_language', 'language_popup_id', 'popup-new-3', 'popup-close-3')">
+						<img src="img/language.png" alt="btn_language">
+					</a>
 				</button>
 			</div>
 			<div class="wrapper-form">
@@ -69,78 +76,57 @@
 		</div>
 	</div>
 
+	<span class="popup-fade-new" id="project_popup_id">
+		<span class="popup-new" id="popup-new-1">
+			<a class="popup-close" href="#" id="popup-close-1">&times</a>
+			<button class="btn-popup">Project one</button>
+			<button class="btn-popup">Project two</button>
+			<button class="btn-popup">Thirty part project</button>
+		</span>
+	</span>
+
+	<span class="popup-fade-new" id="network_popup_id">
+		<span class="popup-new" id="popup-new-2">
+			<a class="popup-close" href="#" id="popup-close-2">&times</a>
+			<button class="btn-popup">Test one</button>
+			<button class="btn-popup">Test two</button>
+			<button class="btn-popup">Test free</button>
+		</span>
+	</span>
+
+	<span class="popup-fade-new" id="language_popup_id">
+		<span class="popup-new" id="popup-new-3">
+			<a class="popup-close" href="#" id="popup-close-3">&times</a>
+			<button class="btn-popup">EN</button>
+			<button class="btn-popup">UA</button>
+			<button class="btn-popup">Ru</button>
+		</span>
+	</span>
 	<script>
-		$(document).ready(function(){
-			$('#btn_project').on('click', function(event) {
-				event.preventDefault();
-				$('#project_popup_id').show('slow/400/fast', function() {
-
-				});
-				$('#project_popup_close_id').on('click', function(event) {
-					event.preventDefault();
-					$('.popup').hide('slow/400/fast', function() {
-
-					});
-				});
+		function myFunction(btn_id, popup_fade_id, pop_up_new_id, popup_close_id) {
+			$('#' + btn_id).click(function() {
+				$('#' + popup_fade_id).fadeIn();
+				return false;
 			});
-		});
 
-		$(document).ready(function(){
-			$('#btn_network').on('click', function(event) {
-				event.preventDefault();
-				$('#network_popup_id').show('slow/400/fast', function() {
-
-				});
-				$('#network_popup_close_id').on('click', function(event) {
-					event.preventDefault();
-					$('.popup').hide('slow/400/fast', function() {
-
-					});
-				});
+			$('#' + popup_close_id).click(function() {
+				$(this).parents('#' + popup_fade_id).fadeOut();
+				return false;
 			});
-		});
 
-		$(document).ready(function(){
-			$('#btn_language').on('click', function(event) {
-				event.preventDefault();
-				$('#language_popup_id').show('slow/400/fast', function() {
-
-				});
-				$('#language_popup_close_id').on('click', function(event) {
-					event.preventDefault();
-					$('.popup').hide('slow/400/fast', function() {
-
-					});
-				});
+			$(document).keydown(function(e) {
+				if (e.keyCode === 27) {
+					e.stopPropagation();
+					$('#' + popup_fade_id).fadeOut();
+				}
 			});
-		});
+
+			$('#' + popup_fade_id).click(function(e) {
+				if ($(e.target).closest('#' + pop_up_new_id).length === 0) {
+					$(this).fadeOut();
+				}
+			});
+		}
 	</script>
-
-	<span class="popup" id="project_popup_id">
-		<span class="popup-content">
-			<button class="popup-close" id="project_popup_close_id">&times</button>
-				<button class="btn-popup">Project one</button>
-				<button class="btn-popup">Project two</button>
-				<button class="btn-popup">Thirty part project</button>
-		</span>
-	</span>
-
-	<span class="popup" id="network_popup_id">
-		<span class="popup-content">
-			<button class="popup-close" id="network_popup_close_id">&times</button>
-				<button class="btn-popup">Test one</button>
-				<button class="btn-popup">Test two</button>
-				<button class="btn-popup">Test free</button>
-		</span>
-	</span>
-
-	<span class="popup" id="language_popup_id">
-		<span class="popup-content">
-			<button class="popup-close" id="language_popup_close_id">&times</button>
-				<button class="btn-popup">EN</button>
-				<button class="btn-popup">UA</button>
-				<button class="btn-popup">Ru</button>
-		</span>
-	</span>
 </body>
 </html>
