@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="wrapper">
 				<a class="logo" href="https://astroport.fi/en" target="_blank"><img src="img/astro.png" alt="logo" class="logo"></a>
-				<h2 class="title lng-title">Версії контракту</h2>
+				<h2 class="title" id="lng-title">Версії контракту</h2>
 				<a href="https://github.com/" target="_blank"><img src="img/github.png" alt="github" class="github"></a>
 				<select id="lng" class="change lang">
 					<option value="en">en</option>
@@ -27,7 +27,7 @@
 	</div>
 	<div class="section">
 		<div class="container">
-			<h1 class="main lng-main">Заголовок</h1>
+			<h1 class="main" id="lng-main">Заголовок</h1>
 			<div class="setting">
 				<button class="btn btn-form" id="btn_project">
 					<a href="#" onclick="myFunction('btn_project', 'project_popup_id', 'popup-new-1', 'popup-close-1')">
@@ -48,7 +48,7 @@
 			<div class="wrapper-form">
 				<div class="form form-L">
 					<div class="text">
-						<p class="name lng-name">Name</p>
+						<p class="name" id="lng-name">Name</p>
 							<ul class="list-L">
 								<li class="catalogue">Contract adress<hr></li>
 								<li class="catalogue">Local name<hr></li>
@@ -60,7 +60,7 @@
 				</div>
 				<div class="form form-R">
 					<div class="text">
-						<p class="variety lng-variety">Variety</p>
+						<p class="variety" id="lng-variety">Variety</p>
 							<ul class="list-R">
 								<li class="catalogue">terratfgybhujkh4567789hgvc7g898j00ddsd<hr></li>
 								<li class="catalogue">staking_adress<hr></li>
@@ -84,18 +84,18 @@
 	<span class="popup-fade-new" id="project_popup_id">
 		<span class="popup-new" id="popup-new-1">
 			<a class="popup-close" href="#" id="popup-close-1">&times</a>
-			<button class="btn-popup lng-projekt-one">Project one</button>
-			<button class="btn-popup lng-projekt-two">Project two</button>
-			<button class="btn-popup lng-projekt-three">Thirty part project</button>
+			<button class="btn-popup" id="lng-project-one">Project one</button>
+			<button class="btn-popup" id="lng-project-two">Project two</button>
+			<button class="btn-popup" id="lng-project-three">Thirty part project</button>
 		</span>
 	</span>
 
 	<span class="popup-fade-new" id="network_popup_id">
 		<span class="popup-new" id="popup-new-2">
 			<a class="popup-close" href="#" id="popup-close-2">&times</a>
-			<button class="btn-popup lng-test-one">Test one</button>
-			<button class="btn-popup lng-test-two">Test two</button>
-			<button class="btn-popup lng-test-three">Test free</button>
+			<button class="btn-popup" id="lng-test-one">Test one</button>
+			<button class="btn-popup" id="lng-test-two">Test two</button>
+			<button class="btn-popup" id="lng-test-three">Test free</button>
 		</span>
 	</span>
 
@@ -133,7 +133,7 @@
 			});
 		}
 	</script>
+	<script src="js/lang.js"></script>
+	<script src="js/app.js"></script>
 </body>
-<script src="js/lang.js"></script>
-<script src="js/app.js"></script>
 </html>

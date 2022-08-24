@@ -10,18 +10,25 @@ function changeURLLanguage(){
 
 function changeLanguage(){
 	let hash = window.location.hash;
-	hash = substr(1);
+	hash = hash.substr(1);
 	console.log(hash);
 	if (!allLang.includes(hash)){
-	location.href = window.location.pathname + '#en'
-	location.reload();
+		console.log("not found lang")
+		location.href = window.location.pathname + '#en';
+		location.reload();
+	} else {
+		console.log("found lang")
+		select.value = hash;
 	}
-	select.value = hash;
-	
+
 	for (let key in langArr) {
-		let elem = document.querySelector('.lng-' + key);
+		console.log("key: ", key);
+		let elem = document.getElementById(key);
+		console.log("elem: ", elem);
 		if (elem) {
 			elem.innerHTML = langArr[key][hash];
 		}
 	}
 }
+
+changeLanguage()

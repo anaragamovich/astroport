@@ -19,17 +19,17 @@ const langArr = {
 		"ua" : "варіант",
 		"ru" : "вариант",
 	},
-	"lng-projekt-one" : {
+	"lng-project-one" : {
 		"en" : "project one",
 		"ua" : "проект один",
 		"ru" : "проэкт один",
 	},
-	"lng-projekt-two" : {
+	"lng-project-two" : {
 		"en" : "project two",
 		"ua" : "проект два",
 		"ru" : "проэкт два",
 	},
-	"lng-projekt-three" : {
+	"lng-project-three" : {
 		"en" : "thirty part project",
 		"ua" : "проект з тридцяти частин",
 		"ru" : "проэкт из тридцати частей",
